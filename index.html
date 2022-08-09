@@ -1,57 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Weather Dashboard</title>
-  </head>
 
-  <body>
-    <header>
-        <h1 class="head">Weather Dashboard</h1>
-    </header>
-    <section class="fluid-container">
-        <div class="row">
-            <form id="cityForm" class="col-2 ml-3">
-                <h2>Search for a city:</h2>
-                <input id="cityName" class="searchBox" type="text" placeholder="Denver, CO, US"><br>
-                <input class="searchBtn" type="submit" value="Search">
-                <div id="listOfCities"></div>
-            </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Weather Dashboard</title>
+</head>
 
-            <div class=" col-9 row">
-                <section class="currentWeatherBox ml-3 col-10"></section>
-                <section class="forcastBox ml-3 mt-3 col-10"></section>
-            </div>       
-        </div>
-    </section>
+<body>
+  <header>
+    <h1 class="head">Weather Dashboard</h1>
+  </header>
+  <section class="fluid-container">
+    <div class="row">
+      <form id="cityForm" class="col-2 ml-3">
+        <h2>Search for a city:</h2>
+        <input id="cityName" class="searchBox" type="text" placeholder="Denver, CO, US"><br>
+        <input class="searchBtn" type="submit" value="Search">
+        <div id="listOfCities"></div>
+        <input id="clearBtn" type="button" class="searchBtn" value="Clear">
+      </form>
 
-  
+      <div class=" col-9 row">
+        <section id="weatherBox" class="currentWeatherBox ml-3 col-10"></section>
+        <section id="forcastBox" class="forcastBox ml-3 mt-3 col-10"></section>
+      </div>
+    </div>
+  </section>
 
 
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/script.js"></script>
 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/script.js"></script>
-
-  </body>
+</body>

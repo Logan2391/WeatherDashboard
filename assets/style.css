@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(224, 247, 255);
+}
+
 /* Header */
 
 .head {
@@ -40,6 +44,7 @@ h1 {
 /* Current Weather */
 
 .currentWeatherBox {
+    background-color: white;
     border-color: black;
     border-style: solid;
     width: 100vw;
@@ -63,3 +68,11 @@ h1 {
     background-color: lightgrey;
     font-weight: 500;
 }
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+  }
