@@ -40,7 +40,7 @@ function presentCurrentData(data, dataName) {
   currentHeader.style.color = "black";
   currentHeader.style.textDecoration = "underline"
   currentHeader.style.fontSize = "25px"
-  currentHeader.innerHTML = dataName + ":  " + moment().format('MMMM Do YYYY');
+  currentHeader.innerHTML = dataName + ":  " + moment().format('LL');
 
   var iconId = data.current.weather[0].icon;
   var weatherIcon = ("https://openweathermap.org/img/wn/" + iconId + "@2x.png");
@@ -81,6 +81,22 @@ function presentCurrentData(data, dataName) {
   uviP.style.textAlign = "center"
   uviP.style.marginBottom = "5px";
   uviP.style.fontSize = "20px";
+  uviP.style.marginLeft ="43%";
+  uviP.style.marginRight ="43%";
+  uviP.style.borderRadius = "5px";
+
+
+  if (uvindex < 3) {
+    uviP.style.backgroundColor = "green"
+    uviP.style.color = "white";
+
+  }
+  if (uvindex >= 3) {
+    uviP.style.backgroundColor = "yellow"
+  }
+  if (uvindex >= 6) {
+    uviP.style.backgroundColor = "red"
+  }
   uviP.innerHTML = "UV Index:  " + uvindex;
 
   weatherBox.appendChild(currentHeader);
@@ -92,9 +108,10 @@ function presentCurrentData(data, dataName) {
   weatherBox.appendChild(uviP);
 
   var dailyArray = data.daily;
-  for (let i = 0; i < dailyArray.length; i++) {
+  for (let i = 1; i < dailyArray.length; i++) {
     const forcast = dailyArray[i];
 
+    var date = new Date(forcast.dt * 1000).toDateString();
     var weatherId = data.daily[i].weather[0].icon;
     var descrip = data.daily[i].weather[0].description;
     var dailyTempMin = data.daily[i].temp.min;
@@ -104,6 +121,7 @@ function presentCurrentData(data, dataName) {
     var forIcon = ("https://openweathermap.org/img/wn/" + weatherId + "@2x.png");
 
     var forcastCard = document.createElement("div");
+    var futureDate = document.createElement("p");
     var dailyIcon = document.createElement("img");
     var iconDescrip = document.createElement("p");
     var tempMin = document.createElement("p");
@@ -122,7 +140,13 @@ function presentCurrentData(data, dataName) {
     forcastCard.style.paddingLeft = "10px";
     forcastCard.style.paddingRight = "10px";
     forcastCard.style.textAlign = "center";
-    
+    forcastCard.style.borderRadius = "10px";
+    forcastCard.style.borderColor = "black";
+    forcastCard.style.borderStyle = "solid";
+
+
+    futureDate.innerHTML = date;
+
     dailyIcon.src = forIcon;
 
     iconDescrip.innerHTML = descrip;
@@ -135,6 +159,7 @@ function presentCurrentData(data, dataName) {
 
     dHumid.innerHTML = "Humidity:  " + dailyHumidity + " %";
 
+    forcastCard.appendChild(futureDate);
     forcastCard.appendChild(dailyIcon);
     forcastCard.appendChild(iconDescrip);
     forcastCard.appendChild(tempMin);
@@ -143,7 +168,7 @@ function presentCurrentData(data, dataName) {
     forcastCard.appendChild(dHumid);
     forcastBox.appendChild(forcastCard);
 
-    if (i >= 4) {
+    if (i >= 5) {
       break;
     }
   }
