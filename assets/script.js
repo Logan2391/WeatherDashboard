@@ -208,7 +208,7 @@ function formSubmit(event) {
     var cityName = event.target.value;
   }
 
-  geocodeCity(cityName)
+  geocodeCity(cityName);
   cityEl.value = "";
   forcastBox.innerHTML = "";
 }
