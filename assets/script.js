@@ -8,7 +8,7 @@ var storedData = JSON.parse(localStorage.getItem("pastCities")) || [];
 
 //Turns city name into lat and lon 
 function geocodeCity(cityName) {
-  fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=d9777a4b12efda3924e55411783a1125")
+  fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=d9777a4b12efda3924e55411783a1125")
     .then((response) => response.json())
     .then((data) => {
 
